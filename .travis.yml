@@ -9,6 +9,9 @@ env:
     - CONDA_PY=27
     - CONDA_PY=34
     - CONDA_PY=35
+  global:
+    # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
+    - secure: "hTUqsMbPEWDh8OEwGihLcSHX92NFspfhYe1F4Omzuy31F/XMSUjRPmXgy4LX2br7uByjBNKFcmQfF3bZTmHBWmJ7rpnBSmGDOHmKf9TYg8Lwb6juG/EJDhPXF3YeRk3IZUBfRnHCqEabo+bc0Um1EjPDzsFV9aNgSid81rgvnh646YRhZ67/yi7SDiFEsywTrPeUayvpScQ0KiXRHCSJhYlw2z7gQSX+WxXC/6/S387lO67aKfB7MyaEVWQzKG8BazEFervEd9lgxAaPtjNWoPOMWki0wHHksoNsQ6wf+ceCMJeNUD7iO2xssoeTJon4wuled9FCUl7Gkjwxg8dA5P56FrmcOon1OGCpNoS1tcwNSi8QcNE4B296n4ZUa7a8Vj+fDYRuKcgcZ/B8fHwpW0P0VN114I6mR5WVUaBAAnqDTM1vv9N6bRytBhmeZLyB+F2s3QwY4VJRJuu5lVNOdSvZmLODsEvKPQA1+wsQUFJbBmtjSf9N2lfRfBII9mEoJFZ0Vpe05HRpc+XTzGOzQICd0MG4K5XgyBPcmlBMWdzBwHeZXmKdZzeCB+rxE+rqYZKsapHfExBGowo1BNLzH4Z61NkR7e4VLkoOnQlDJ0GqCLDAIVm/F7ZqSXw/a88jQtZKn5Cr+tdSSXL2bhrbeBNjAmN5FMMt3rG0ii41eso="
 
 
 before_install:
