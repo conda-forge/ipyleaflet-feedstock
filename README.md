@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/ipyleaflet-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/ipyleaflet-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/ipyleaflet-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/ipyleaflet-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/ipyleaflet-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/ipyleaflet-feedstock/branch/master)
