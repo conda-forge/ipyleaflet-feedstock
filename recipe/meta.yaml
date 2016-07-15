@@ -21,6 +21,9 @@ requirements:
     run:
         - python
         - ipywidgets >=5.1.5
+        # Pinning pyzmq because the current conda-forge pyzmq package does
+        # not work with win+py35
+        - pyzmq >=15.2.0
 
 test:
     imports:
