@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
     name: ipyleaflet
@@ -7,10 +7,10 @@ package:
 source:
     fn: ipyleaflet-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
-    md5: 5922c343d80c29b953e6253eac8a73f0
+    md5: a51b87f35d650b714178cfa6f33d1eca
 
 build:
-    number: 1
+    number: 0
     script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -21,6 +21,9 @@ requirements:
     run:
         - python
         - ipywidgets >=5.1.5
+        # Pinning pyzmq because the current conda-forge pyzmq package does
+        # not work with win+py35
+        - pyzmq >=15.2.0
 
 test:
     imports:
