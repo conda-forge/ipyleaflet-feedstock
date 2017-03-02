@@ -1,4 +1,5 @@
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "ff7ed2caf44eb2fa2c4bf9f333213e13c1cf84c17b72881a031e0591953cf9c4" %}
 
 package:
     name: ipyleaflet
@@ -7,10 +8,10 @@ package:
 source:
     fn: ipyleaflet-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
-    md5: a51b87f35d650b714178cfa6f33d1eca
+    sha256: {{ sha256 }}
 
 build:
-    number: 1
+    number: 0
     script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -20,10 +21,7 @@ requirements:
         - jupyter
     run:
         - python
-        - ipywidgets >=5.1.5
-        # Pinning pyzmq because the current conda-forge pyzmq package does
-        # not work with win+py35
-        - pyzmq >=15.2.0
+        - ipywidgets >=6.0.0
 
 test:
     imports:
