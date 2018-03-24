@@ -1,4 +1,4 @@
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: ipyleaflet
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
-  sha256: ee3bd3455fb596c94775b73ffc9d1312f6903c473198074328900bcef701c66f
+  sha256: 6f814b60d702dbc5d582c945c35fad52f970faed391712cf3eecc845c33fdf2c
 
 build:
   number: 0
