@@ -1,5 +1,5 @@
-{% set version = "0.8.3" %}
-{% set sha256 = "99a11f183555d38ab86f9e0d41b8f02910f24d610af0a375409dab007c16cacb" %}
+{% set version = "0.8.4" %}
+{% set sha256 = "3dc4782c111850a16705109b9abcaf5f5780d8e52fc6ae0f9a453a2d4fd59b8b" %}
 
 package:
   name: ipyleaflet
