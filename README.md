@@ -1,7 +1,7 @@
 About ipyleaflet
 ================
 
-Home: https://github.com/ellisonbg/ipyleaflet
+Home: https://github.com/jupyter-widgets/ipyleaflet
 
 Package license: MIT
 
