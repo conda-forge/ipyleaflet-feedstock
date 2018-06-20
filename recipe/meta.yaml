@@ -1,4 +1,5 @@
-{% set version = "0.8.1" %}
+{% set version = "0.8.3" %}
+{% set sha256 = "99a11f183555d38ab86f9e0d41b8f02910f24d610af0a375409dab007c16cacb" %}
 
 package:
   name: ipyleaflet
@@ -6,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
-  sha256: f3d94e7b8fe309a4b1c7d6b2f9fd4fec90d85bc40248f651825f0242b7956c90
+  sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -20,15 +21,19 @@ requirements:
   run:
     - python
     - ipywidgets >=7.0.0,<8.0.0
+    - traittypes >=0.2.1,<0.3.0
+    - xarray >=0.10.0,<0.11.0
 
 test:
   imports:
     - ipyleaflet
 
 about:
-  home: https://github.com/ellisonbg/ipyleaflet
+  home: https://github.com/jupyter-widgets/ipyleaflet
   license: MIT
   summary: A Jupyter widget for dynamic Leaflet maps
+  doc_url: http://ipyleaflet.readthedocs.io
+  dev_url: https://github.com/jupyter-widgets/ipyleaflet
 
 extra:
   recipe-maintainers:
