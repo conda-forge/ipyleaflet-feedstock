@@ -1,5 +1,5 @@
-{% set version = "0.9.1" %}
-{% set sha256 = "379b04e937e655ef35b3d41b56a29d4c4969c6d514749201aa9ffea400bd090c" %}
+{% set version = "0.9.2" %}
+{% set sha256 = "884271cc5b254f5533fa0b701292180755e74dba39e66d39ffe4252ba63b13d2" %}
 
 package:
   name: ipyleaflet
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 1000
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
