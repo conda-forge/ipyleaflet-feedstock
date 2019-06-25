@@ -1,5 +1,5 @@
-{% set version = "0.10.6" %}
-{% set sha256 = "9676e6c2a1070dee230efa7e4497b2b75aae5284e3d7f2a92459ff3ffb491018" %}
+{% set version = "0.10.7" %}
+{% set sha256 = "ae203cb0d425bd41ad69d5dcbbf732f186b7fe9c3932fb249d9561a588279619" %}
 
 package:
   name: ipyleaflet
@@ -24,7 +24,6 @@ requirements:
     - traittypes >=0.2.1,<0.3.0
     - xarray >=0.10.0
     - branca >=0.3.1,<0.4.0
-    - geopandas >=0.5.0,<0.6.0
 
 test:
   imports:
