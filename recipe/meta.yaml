@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
@@ -20,7 +20,7 @@ requirements:
     - jupyter
   run:
     - python
-    - ipywidgets >=7.0.0,<8.0.0
+    - ipywidgets >=7.5.0,<8.0.0
     - traittypes >=0.2.1,<0.3.0
     - xarray >=0.10.0
     - branca >=0.3.1,<0.4.0
