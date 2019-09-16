@@ -1,5 +1,5 @@
-{% set version = "0.11.1" %}
-{% set sha256 = "c64e36852dabcb445a4d0a05cac60a09cfa9cef63eab207df7aa0450728f0d3f" %}
+{% set version = "0.11.2" %}
+{% set sha256 = "8697f810bce2941c2f53b39db9a9e6c6146494306df20b108edaa7c588e356d7" %}
 
 package:
   name: ipyleaflet
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
@@ -32,6 +32,7 @@ test:
 about:
   home: https://github.com/jupyter-widgets/ipyleaflet
   license: MIT
+  license_file: LICENSE
   summary: A Jupyter widget for dynamic Leaflet maps
   doc_url: http://ipyleaflet.readthedocs.io
   dev_url: https://github.com/jupyter-widgets/ipyleaflet
