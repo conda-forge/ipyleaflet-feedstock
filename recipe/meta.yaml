@@ -1,4 +1,5 @@
 {% set version = "0.12.3" %}
+{% set js_version = "0.12.3" %}
 {% set sha256 = "91d1c05a41aa9e227e436ed9400bf4f6614f1f1be0e3ab8c18d96c8508e71ff5" %}
 
 package:
@@ -10,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -29,6 +30,13 @@ requirements:
 test:
   imports:
     - ipyleaflet
+  commands:
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                     # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                         # [unix]
+    - test -f ${PREFIX}/share/jupyter/lab/extensions/jupyter-leaflet-{{ js_version }}.tgz                              # [unix]
+    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 0) else (exit 1)         # [win]
+    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 0) else (exit 1)             # [win]
+    - if exist %PREFIX%\\share\\jupyter\\lab\\extensions\\jupyter-leaflet-{{ js_version }}.tgz (exit 0) else (exit 1)  # [win]
 
 about:
   home: https://github.com/jupyter-widgets/ipyleaflet
