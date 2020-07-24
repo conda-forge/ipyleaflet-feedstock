@@ -5,7 +5,7 @@ Home: https://github.com/jupyter-widgets/ipyleaflet
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A Jupyter widget for dynamic Leaflet maps
 
@@ -117,6 +117,7 @@ Feedstock Maintainers
 =====================
 
 * [@SylvainCorlay](https://github.com/SylvainCorlay/)
+* [@davidbrochart](https://github.com/davidbrochart/)
 * [@ellisonbg](https://github.com/ellisonbg/)
 * [@jasongrout](https://github.com/jasongrout/)
 * [@martinRenou](https://github.com/martinRenou/)
