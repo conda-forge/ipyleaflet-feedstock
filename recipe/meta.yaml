@@ -1,5 +1,5 @@
 {% set version = "0.13.2" %}
-{% set js_version = "0.13.1" %}
+{% set js_version = "0.13.2" %}
 {% set sha256 = "ecb700a74a236d2aa63379675c47e7f14290ff751f8bf35eb2a2a9f77b403b1b" %}
 
 package:
