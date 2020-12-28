@@ -1,6 +1,6 @@
-{% set version = "0.13.3" %}
+{% set version = "0.13.4" %}
 {% set js_version = "0.13.2" %}
-{% set sha256 = "c05f138327926bc81f29a629588bd656be5ff76dd8785c1e7eac5445b1d5a432" %}
+{% set sha256 = "302a9ee7f80884e58f429fa51767de5aef7a8725eac97cd17041ad7d9269f6b7" %}
 
 package:
   name: ipyleaflet
@@ -16,7 +16,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
     - jupyter
