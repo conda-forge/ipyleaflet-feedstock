@@ -5,11 +5,13 @@ Home: https://github.com/jupyter-widgets/ipyleaflet
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ipyleaflet-feedstock/blob/master/LICENSE.txt)
 
 Summary: A Jupyter widget for dynamic Leaflet maps
 
+Development: https://github.com/jupyter-widgets/ipyleaflet
 
+Documentation: http://ipyleaflet.readthedocs.io
 
 Current build status
 ====================
