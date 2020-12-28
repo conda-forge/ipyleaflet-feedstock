@@ -24,17 +24,18 @@ requirements:
     - python
     - ipywidgets >=7.5.0,<8.0.0
     - traittypes >=0.2.1,<0.3.0
-    - branca >=0.3.1,<0.4.0
+    - branca >=0.3.1,<0.5.0
+    - shapely
 
 test:
   imports:
     - ipyleaflet
   commands:
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                     # [unix]
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                         # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                        # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                            # [unix]
     - test -f ${PREFIX}/share/jupyter/lab/extensions/jupyter-leaflet-{{ js_version }}.tgz                              # [unix]
-    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 0) else (exit 1)         # [win]
-    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 0) else (exit 1)             # [win]
+    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 0) else (exit 1)            # [win]
+    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 0) else (exit 1)                # [win]
     - if exist %PREFIX%\\share\\jupyter\\lab\\extensions\\jupyter-leaflet-{{ js_version }}.tgz (exit 0) else (exit 1)  # [win]
 
 about:
