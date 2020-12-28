@@ -1,6 +1,6 @@
-{% set version = "0.13.3" %}
-{% set js_version = "0.13.2" %}
-{% set sha256 = "c05f138327926bc81f29a629588bd656be5ff76dd8785c1e7eac5445b1d5a432" %}
+{% set version = "0.13.4" %}
+{% set js_version = "0.13.3" %}
+{% set sha256 = "302a9ee7f80884e58f429fa51767de5aef7a8725eac97cd17041ad7d9269f6b7" %}
 
 package:
   name: ipyleaflet
@@ -16,7 +16,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
     - jupyter
@@ -24,17 +24,18 @@ requirements:
     - python
     - ipywidgets >=7.5.0,<8.0.0
     - traittypes >=0.2.1,<0.3.0
-    - branca >=0.3.1,<0.4.0
+    - branca >=0.3.1,<0.5.0
+    - shapely
 
 test:
   imports:
     - ipyleaflet
   commands:
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                     # [unix]
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                         # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                        # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                            # [unix]
     - test -f ${PREFIX}/share/jupyter/lab/extensions/jupyter-leaflet-{{ js_version }}.tgz                              # [unix]
-    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 0) else (exit 1)         # [win]
-    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 0) else (exit 1)             # [win]
+    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 0) else (exit 1)            # [win]
+    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 0) else (exit 1)                # [win]
     - if exist %PREFIX%\\share\\jupyter\\lab\\extensions\\jupyter-leaflet-{{ js_version }}.tgz (exit 0) else (exit 1)  # [win]
 
 about:
