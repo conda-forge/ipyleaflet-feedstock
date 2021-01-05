@@ -1,6 +1,5 @@
-{% set version = "0.13.4" %}
-{% set js_version = "0.13.3" %}
-{% set sha256 = "302a9ee7f80884e58f429fa51767de5aef7a8725eac97cd17041ad7d9269f6b7" %}
+{% set version = "0.13.5" %}
+{% set sha256 = "8d71cb5ec0e66899e8e1cd3d79de29357f982396efba9c3cfd72d6d9055eb03b" %}
 
 package:
   name: ipyleaflet
@@ -9,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - patches/0001-Fix-imports.patch
 
 build:
   number: 0
@@ -17,12 +18,15 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
+    - nodejs
     - jupyter
+    - jupyterlab =3
+    - jupyter-packaging
   run:
-    - python
-    - ipywidgets >=7.5.0,<8.0.0
+    - python >=3.6
+    - ipywidgets >=7.6.0,<8.0.0
     - traittypes >=0.2.1,<0.3.0
     - branca >=0.3.1,<0.5.0
     - shapely
@@ -31,12 +35,12 @@ test:
   imports:
     - ipyleaflet
   commands:
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                        # [unix]
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                            # [unix]
-    - test -f ${PREFIX}/share/jupyter/lab/extensions/jupyter-leaflet-{{ js_version }}.tgz                              # [unix]
-    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 0) else (exit 1)            # [win]
-    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 0) else (exit 1)                # [win]
-    - if exist %PREFIX%\\share\\jupyter\\lab\\extensions\\jupyter-leaflet-{{ js_version }}.tgz (exit 0) else (exit 1)  # [win]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                       # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                           # [unix]
+    - test -f ${PREFIX}/share/jupyter/labextensions/jupyter-leaflet/package.json                                      # [unix]
+    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 0) else (exit 1)           # [win]
+    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 0) else (exit 1)               # [win]
+    - if exist %PREFIX%\\share\\jupyter\\labextensions\\jupyter-leaflet\\package.json (exit 0) else (exit 1)          # [win]
 
 about:
   home: https://github.com/jupyter-widgets/ipyleaflet
