@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - patches/0001-Fix-imports.patch
 
 build:
   number: 0
