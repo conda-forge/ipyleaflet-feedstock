@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -33,12 +33,12 @@ test:
   imports:
     - ipyleaflet
   commands:
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                       # [unix]
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                           # [unix]
-    - test -f ${PREFIX}/share/jupyter/labextensions/jupyter-leaflet/package.json                                      # [unix]
-    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 0) else (exit 1)           # [win]
-    - if exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 0) else (exit 1)               # [win]
-    - if exist %PREFIX%\\share\\jupyter\\labextensions\\jupyter-leaflet\\package.json (exit 0) else (exit 1)          # [win]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                             # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                 # [unix]
+    - test -f ${PREFIX}/share/jupyter/labextensions/jupyter-leaflet/package.json                            # [unix]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 1)           # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 1)               # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\labextensions\\jupyter-leaflet\\package.json (exit 1)          # [win]
 
 about:
   home: https://github.com/jupyter-widgets/ipyleaflet
