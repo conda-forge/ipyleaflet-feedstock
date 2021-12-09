@@ -10,15 +10,16 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
+  build:
+    - nodejs
   host:
     - python >=3.6
     - pip
-    - nodejs
     - jupyter
     - jupyterlab =3
     - jupyter-packaging
