@@ -10,13 +10,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
-    - nodejs
+    - nodejs >=16
   host:
     - python >=3.6
     - pip
