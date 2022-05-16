@@ -28,7 +28,6 @@ requirements:
     - ipywidgets >=7.6.0,<8.0.0
     - traittypes >=0.2.1,<0.3.0
     - xyzservices >=2021.8.1
-    - branca >=0.3.1,<0.5.0
 
 test:
   imports:
