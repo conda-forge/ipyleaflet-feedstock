@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
+  number: 4
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -22,14 +22,12 @@ requirements:
     - pip
     - jupyter
     - jupyterlab =3
-    - jupyter-packaging
+    - jupyter-packaging =0.7
   run:
     - python >=3.6
     - ipywidgets >=7.6.0,<8.0.0
     - traittypes >=0.2.1,<0.3.0
     - xyzservices >=2021.8.1
-    - branca >=0.3.1,<0.5.0
-    - shapely
 
 test:
   imports:
