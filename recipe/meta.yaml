@@ -22,7 +22,7 @@ requirements:
     - pip
     - jupyter
     - jupyterlab =3
-    - jupyter-packaging
+    - jupyter-packaging =0.7
   run:
     - python >=3.6
     - ipywidgets >=7.6.0,<8.0.0
