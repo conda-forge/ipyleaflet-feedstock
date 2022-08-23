@@ -1,5 +1,5 @@
-{% set version = "0.17.0" %}
-{% set sha256 = "3c808a2ba65f9b40dadf7f1875972e57f7403567eacc47e7d87220ebfc6122c3" %}
+{% set version = "0.17.1" %}
+{% set sha256 = "ee8d19c02cc465f8b10808fcc54f55db685ba0fdd8a0b0f409c3d8370d53782f" %}
 
 package:
   name: ipyleaflet
@@ -25,9 +25,10 @@ requirements:
     - jupyter-packaging =0.7
   run:
     - python >=3.6
-    - ipywidgets >=7.6.0,<8.0.0
+    - ipywidgets >=7.6.0,<9
     - traittypes >=0.2.1,<0.3.0
     - xyzservices >=2021.8.1
+    - branca >=0.5.0
 
 test:
   imports:
