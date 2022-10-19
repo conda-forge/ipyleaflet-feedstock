@@ -18,13 +18,13 @@ requirements:
   build:
     - nodejs >=16
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
     - jupyter
     - jupyterlab =3
     - jupyter-packaging =0.7
   run:
-    - python >=3.6
+    - python >=3.7
     - ipywidgets >=7.6.0,<9
     - traittypes >=0.2.1,<0.3.0
     - xyzservices >=2021.8.1
