@@ -21,7 +21,7 @@ requirements:
     - python >=3.7
     - pip
     - jupyter
-    - jupyterlab >=3,<3.6
+    - jupyterlab >=4,<5
     - jupyter-packaging >=0.12,<1
   run:
     - python >=3.7
