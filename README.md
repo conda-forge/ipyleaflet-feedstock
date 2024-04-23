@@ -32,6 +32,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ipyleaflet-green.svg)](https://anaconda.org/conda-forge/ipyleaflet) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ipyleaflet.svg)](https://anaconda.org/conda-forge/ipyleaflet) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ipyleaflet.svg)](https://anaconda.org/conda-forge/ipyleaflet) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ipyleaflet.svg)](https://anaconda.org/conda-forge/ipyleaflet) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-jupyter_leaflet-green.svg)](https://anaconda.org/conda-forge/jupyter_leaflet) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyter_leaflet.svg)](https://anaconda.org/conda-forge/jupyter_leaflet) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyter_leaflet.svg)](https://anaconda.org/conda-forge/jupyter_leaflet) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyter_leaflet.svg)](https://anaconda.org/conda-forge/jupyter_leaflet) |
 
 Installing ipyleaflet
 =====================
@@ -43,16 +44,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ipyleaflet` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `ipyleaflet, jupyter_leaflet` can be installed with `conda`:
 
 ```
-conda install ipyleaflet
+conda install ipyleaflet jupyter_leaflet
 ```
 
 or with `mamba`:
 
 ```
-mamba install ipyleaflet
+mamba install ipyleaflet jupyter_leaflet
 ```
 
 It is possible to list all of the versions of `ipyleaflet` available on your platform with `conda`:
