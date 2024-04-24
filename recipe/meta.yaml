@@ -1,45 +1,72 @@
 {% set version = "0.19.0" %}
-{% set sha256 = "92c600f1ed96b371572fb8fbd85a935bd026ae65db58f8449b9319977aa23508" %}
 
 package:
   name: ipyleaflet
   version: {{ version }}
 
+
 source:
-  url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  - url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
+    sha256: 92c600f1ed96b371572fb8fbd85a935bd026ae65db58f8449b9319977aa23508
+    folder: ipyleaflet
+  - url: https://pypi.io/packages/source/j/jupyter_leaflet/jupyter_leaflet-{{ version }}.tar.gz
+    sha256: 3201c9c7dee782b2f64c86c508e106452e823ad65a127656191aa0f88c44454d
+    folder: jupyter_leaflet
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
-requirements:
-  build:
-    - nodejs >=16
-  host:
-    - python >=3.7
-    - pip
-    - jupyter
-    - jupyterlab >=4,<5
-    - jupyter-packaging >=0.12,<1
-  run:
-    - python >=3.7
-    - ipywidgets >=7.6.0,<9
-    - traittypes >=0.2.1,<0.3.0
-    - xyzservices >=2021.8.1
-    - branca >=0.5.0
+outputs:
+  - name: jupyter_leaflet
+    version: {{ version }}
+    build:
+      noarch: python
+      script: |
+        cd jupyter_leaflet
+        python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+        - nodejs >=18,<19
+        - hatchling
+        - jupyterlab >=4,<5
+        - hatch-nodejs-version >=0.3.2
+    test:
+      commands:
+        - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                             # [unix]
+        - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                 # [unix]
+        - test -f ${PREFIX}/share/jupyter/labextensions/jupyter-leaflet/package.json                            # [unix]
+        - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 1)           # [win]
+        - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 1)               # [win]
+        - if not exist %PREFIX%\\share\\jupyter\\labextensions\\jupyter-leaflet\\package.json (exit 1)          # [win]
 
-test:
-  imports:
-    - ipyleaflet
-  commands:
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                             # [unix]
-    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                 # [unix]
-    - test -f ${PREFIX}/share/jupyter/labextensions/jupyter-leaflet/package.json                            # [unix]
-    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\extension.js (exit 1)           # [win]
-    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\jupyter-leaflet\\index.js (exit 1)               # [win]
-    - if not exist %PREFIX%\\share\\jupyter\\labextensions\\jupyter-leaflet\\package.json (exit 1)          # [win]
+  - name: ipyleaflet
+    version: {{ version }}
+    build:
+      noarch: python
+      script: |
+        cd ipyleaflet
+        python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+        - hatch-jupyter-builder >=0.5.3
+        - hatchling >=1.8.1
+      run:
+        - python >=3.8
+        - ipywidgets >=7.6.0,<9
+        - traittypes >=0.2.1,<0.3.0
+        - xyzservices >=2021.8.1
+        - branca >=0.5.0
+        - jupyter_leaflet
+      run_constrained:
+        - jupyter_leaflet ={{ version }}
+    test:
+      imports:
+        - ipyleaflet
 
 about:
   home: https://github.com/jupyter-widgets/ipyleaflet
