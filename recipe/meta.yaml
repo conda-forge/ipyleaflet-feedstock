@@ -1,9 +1,8 @@
 {% set version = "0.19.0" %}
 
 package:
-  name: ipyleaflet
+  name: ipyleaflet-packages
   version: {{ version }}
-
 
 source:
   - url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
@@ -14,7 +13,7 @@ source:
     folder: jupyter_leaflet
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
