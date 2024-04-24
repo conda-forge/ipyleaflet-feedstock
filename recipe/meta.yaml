@@ -23,7 +23,7 @@ outputs:
       noarch: python
       script: |
         cd jupyter_leaflet
-        python -m pip install . -vv
+        python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
     requirements:
       host:
         - python >=3.8
@@ -48,7 +48,7 @@ outputs:
       noarch: python
       script: |
         cd ipyleaflet
-        python -m pip install . -vv
+        python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
     requirements:
       host:
         - python >=3.8
