@@ -1,4 +1,4 @@
-{% set version = "0.19.1" %}
+{% set version = "0.19.2" %}
 
 package:
   name: ipyleaflet-packages
@@ -6,10 +6,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
-    sha256: 3454dbc0d360150516ea2a3ab4109503ceb9b7347fa1746a6cafd889075a0ff8
+    sha256: b3b83fe3460e742964c2a5924ea7934365a3749bb75310ce388d45fd751372d2
     folder: ipyleaflet
   - url: https://pypi.io/packages/source/j/jupyter_leaflet/jupyter_leaflet-{{ version }}.tar.gz
-    sha256: f4c1ab7a8b2c91d01a0940d1bab6543c57e91dca6425789632780eef7d58b266
+    sha256: b09b5ba48b1488cb61da37a6f558347269eb53ff6d64dc1a73e005ffc4420063
     folder: jupyter_leaflet
 
 build:
