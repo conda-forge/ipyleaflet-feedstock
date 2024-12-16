@@ -5,15 +5,15 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz
     sha256: b3b83fe3460e742964c2a5924ea7934365a3749bb75310ce388d45fd751372d2
     folder: ipyleaflet
-  - url: https://pypi.io/packages/source/j/jupyter_leaflet/jupyter_leaflet-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/j/jupyter_leaflet/jupyter_leaflet-{{ version }}.tar.gz
     sha256: b09b5ba48b1488cb61da37a6f558347269eb53ff6d64dc1a73e005ffc4420063
     folder: jupyter_leaflet
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -26,7 +26,7 @@ outputs:
         python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
         - nodejs >=18,<19
         - hatch-jupyter-builder >=0.5.3
@@ -34,6 +34,8 @@ outputs:
         - jupyterlab >=4,<5
         - hatch-nodejs-version >=0.3.2
     test:
+      requires:
+        - python {{ python_min }}
       commands:
         - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                             # [unix]
         - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                 # [unix]
@@ -51,11 +53,11 @@ outputs:
         python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
         - hatchling
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         - ipywidgets >=7.6.0,<9
         - traittypes >=0.2.1,<0.3.0
         - xyzservices >=2021.8.1
@@ -64,6 +66,8 @@ outputs:
       run_constrained:
         - jupyter_leaflet ={{ version }}
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - ipyleaflet
 
